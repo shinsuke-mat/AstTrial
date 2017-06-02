@@ -13,10 +13,9 @@ import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.FieldDeclaration;
-import org.eclipse.jdt.core.dom.ForStatement;
-import org.eclipse.jdt.core.dom.LineComment;
+import org.eclipse.jdt.core.dom.IfStatement;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
-import org.eclipse.jdt.core.dom.TypeDeclaration;
+import org.eclipse.jdt.core.dom.PrimitiveType;
 
 public class MyVisitor extends ASTVisitor {
 
@@ -32,26 +31,25 @@ public class MyVisitor extends ASTVisitor {
 		unit.accept(visitor);
 	}
 
-    CompilationUnit compilationUnit;
-    private List<String> source;
+	CompilationUnit compilationUnit;
+	@SuppressWarnings("unused")
+	private List<String> source;
 
-    public MyVisitor(CompilationUnit compilationUnit, List<String> source) {
-        super();
-        this.compilationUnit = compilationUnit;
-        this.source = source;
-    }
+	public MyVisitor(CompilationUnit compilationUnit, List<String> source) {
+		super();
+		this.compilationUnit = compilationUnit;
+		this.source = source;
+	}
 
 	@Override
 	public boolean visit(MethodDeclaration node) {
-		System.out.println("MethodDeclaration: " + node.getName());
-		//return super.visit(node);
-		return false;
+		System.out.println("MethodDeclaration: " + node);
+		return true;
 	}
 
 	@Override
 	public boolean visit(FieldDeclaration node) {
 		System.out.println("FieldDeclaration: " + node);
-		//return super.visit(node);
 		return true;
 	}
 

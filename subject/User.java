@@ -12,9 +12,12 @@ public class Example {
 		this.setAge(age);
 	}
 	
-	public void testMethod() {
-		if (1) {
+	public void testMethod(int n) {
+		if (n > 0) {
 			System.out.println("x");
+			int x = 0;
+		} else {
+			System.out.println("???");
 		}
 		for (int i = 0; i > 10; i++) {
 			System.out.println("y");
