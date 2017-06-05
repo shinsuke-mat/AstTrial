@@ -1,13 +1,13 @@
-package jp.ac.osakau.ast.example;
+package jp.ac.osakau.ast;
 
-public class Example {
+public class User {
 	private String name;
 	private int age;
 
-	public Example() {
+	public User() {
 		this("", 0);
 	}
-	public Example(String name, int age) {
+	public User(String name, int age) {
 		this.setName(name);
 		this.setAge(age);
 	}
